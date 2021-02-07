@@ -1,0 +1,21 @@
+{% extends "parts/layout.njk" %}
+{% block content %}
+    <article>
+        <div class="cards-container">
+            {% for recipe in recipes %}
+                <div class="card">
+                    <img id="{{recipe.image}}" src="assets/{{recipe.image}}.png" alt="{{recipe.title}}">
+                    <h4>{{recipe.title}}</h4>
+                    <p>por {{recipe.chef}}</p>
+                </div>
+            {% endfor %}
+            {% for recipe in recipes %}
+                <div class="card">
+                    <img id="{{recipe.image}}" src="assets/{{recipe.image}}.png" alt="{{recipe.title}}">
+                    <h4>{{recipe.title}}</h4>
+                    <p>por {{recipe.chef}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </article>
+{% endblock content %}
