@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFy</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    {% block head %}
+    {% endblock head %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>    
+
+   {% block modal %}
+   {% endblock modal %}
+
+    <header>
+        <div class="nav-container admin">
+            <a href="/"><img src="/assets/logo_white.png" alt="Logo FoodFy"></a>
+        </div>
+    </header>
+
+    <main>   
+    
+        {% block content %}
+
+        {% endblock content %}
+    </main>
+    
+    <footer>
+        <p>Todos direitos reservados, receitas Foodfy.</p>
+    </footer>
+
+</body>
+</html>

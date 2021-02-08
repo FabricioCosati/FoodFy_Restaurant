@@ -1,6 +1,28 @@
 {% extends "parts/layout.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/homepage.css">
+    <link rel="stylesheet" href="/styles/modalAndCards.css">
+    <script src="/scripts/scriptsModal.js" defer></script>
+{% endblock head %}
+
+{% block modal %}
+ <div class="modal">
+        <div class="modal-content">
+            <div class="card-modal">
+                <img src="" alt="">
+                <h4></h4>
+                <p></p>
+                <div class="close-modal">
+                    <p>Fechar Modal</p>
+                </div>
+            </div>        
+        </div>
+    </div>
+{% endblock modal %}
+
 {% block content %}
-    <section>
+    <section class="homepage">
         <div class="info-container">    
             <div class="info-text">
                 <h2>   
@@ -22,7 +44,7 @@
         <div class="cards-container">
             {% for recipe in recipes %}
                 <div class="card">
-                    <img id="{{recipe.image}}" src="assets/{{recipe.image}}.png" alt="{{recipe.title}}">
+                    <img id="{{recipe.recipe_url}}" src="assets/{{recipe.recipe_url}}.png" alt="{{recipe.title}}">
                     <h4>{{recipe.title}}</h4>
                     <p>por {{recipe.chef}}</p>
                 </div>
