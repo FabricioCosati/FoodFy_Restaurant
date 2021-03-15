@@ -1,0 +1,37 @@
+{% extends "parts/adminLayout.njk" %}
+
+{% block content %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/chefs.css">
+    <link rel="stylesheet" href="/styles/container.css">
+    <script src="/scripts/ScriptsImages.js" defer></script>
+{% endblock head %}
+
+    <section class="form-group">
+
+        <form id="form-update" action="/admin/chefs?_method=PUT" method="POST" enctype="multipart/form-data">
+            
+            <header class="form-header">
+                <h1>Editando Chef</h1>
+                <div class="button-group">
+                    <button form="form-delete" class="button button-delete" type="submit">Deletar</button>
+                    <button form="form-update" class="button" type="submit">Salvar Chef</button>
+                </div>
+            </header>
+
+            {% include 'chefs/fields.njk' %}
+
+            <input type="hidden" name="id" value="{{chef.id}}">
+
+        </form>
+
+        <form id="form-delete" action="/admin/chefs?_method=DELETE" method="POST">
+            
+            <input type="hidden" name="id" value="{{chef.id}}">
+
+        </form>
+
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,49 @@
+<div class="item">
+    <div>
+        <h2>Nome</h2>
+    </div>
+    <div class="input-div">
+        <input type="text" name="name" value="{{user.name}}" placeholder="Seu nome">
+    </div>
+</div>
+
+<div class="item">
+    <div>
+        <h2>Email</h2>
+    </div>
+    <div class="input-div">
+        <input type="email" name="email" value="{{user.email}}" placeholder="Digite seu email" onblur="Validate.apply(this, 'isEmail')">
+    </div>
+</div>
+
+{% if user.id == session.userId %}
+<div class="item">
+    <div>
+        <h2>Senha</h2>
+    </div>
+    <div class="input-div">
+        <input 
+        type="password" 
+        name="password" 
+        {%if req.session.userId %} 
+            placeholder="Digite sua senha para atualizar"
+        {% else %}
+            placeholder="Digite sua senha"
+        {% endif %}>
+    </div>
+</div>
+{% endif %}
+
+{% if user.id != session.userId and session.isAdmin %}
+<div class="item admin">
+    <div>
+        <input type="checkbox" name="admin" 
+        {% if adm or user.is_admin %} 
+            checked 
+        {% endif %}>
+    </div>
+    <div>
+        <h2>Administrador</h2>
+    </div>
+</div>
+{% endif %}

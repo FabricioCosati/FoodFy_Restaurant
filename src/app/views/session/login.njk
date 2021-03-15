@@ -1,0 +1,36 @@
+{% extends "parts/adminLayout.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/container.css">
+    <link rel="stylesheet" href="/styles/session.css">
+    <script src="/scripts/scriptsValidation.js" defer></script>
+{% endblock head %}
+
+{% block content %}
+
+    <section class="form-group session">
+
+        <div class="session-logo">
+            <img src="/assets/logo.png" alt="Imagem de FoodFy">
+        </div>
+
+        <form action="/admin/login" method="POST">
+
+            <header class="form-header">
+                <h2>Iniciar Sessão</h2>
+            </header>
+
+            <div class="fields">
+                {% include "session/fields.njk" %}
+            </div>
+
+            <div class="form-footer">
+                <a href="/admin/forgotPassword">Perdeu a senha?</a>
+                <button class="button" type="submit">Acessar</button>
+            </div>
+        </form>
+    </section>
+
+    <img src="" alt="">
+
+{% endblock content %}

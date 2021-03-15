@@ -1,0 +1,42 @@
+/* ============= SESSION - login =============*/
+
+section.form-group.session .session-logo {
+    margin-bottom: 9.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.form-group.session {
+    max-width: 50%;
+    margin: 3rem auto 0;
+}
+
+section.form-group.session .form-header h2 {
+    text-align: center;
+}
+
+section.form-group.session .form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10rem;
+}
+
+section.form-group.session .form-footer a {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #969696;
+    text-decoration: none;
+
+    transition: color .2s;
+}
+
+section.form-group.session .form-footer a:hover {
+    color: #616161;
+}
+
+section.form-group.session .form-footer.reset {
+    justify-content: flex-end;
+}

@@ -1,0 +1,28 @@
+{% extends "parts/adminLayout.njk"%}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/container.css">
+    <link rel="stylesheet" href="/styles/users.css">
+    <script src="/scripts/scriptsValidation.js" defer></script>
+{% endblock head %}
+
+{% block content %}
+
+    <section class="form-group user">
+        
+        <form action="/admin/user" method="POST">
+
+            <header class="form-header">
+                <h2>Criar Usuário</h2>
+                <div class="button-group">
+                    <button class="button" type="submit">Salvar</button>
+                    <a href="/admin/user/list" class="button button-cancel">Cancelar</a>
+                </div>
+            </header>
+
+            <div class="fields">
+                {% include 'users/fields.njk' %}
+            </div>
+        </form>
+    </section>
+{% endblock content %}

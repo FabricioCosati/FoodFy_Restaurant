@@ -1,0 +1,49 @@
+div.messages.error {
+    position: absolute;
+    right: .8rem;
+    font-weight: bold;
+    color: white;
+    background: #DC4747;
+    border-radius: 4px;
+    /* padding: 4rem 8rem; */
+    width: 25%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    animation: hiddeMessage .4s ease-in forwards;
+}
+
+div.messages.success {
+    position: absolute;
+    right: .8rem;
+    font-weight: bold;
+    color: white;
+    background: #01B12A;
+    border-radius: 4px;
+    /* padding: 4rem 8rem; */
+    width: 25%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    animation: hiddeMessage .4s ease-in forwards;
+}
+
+@keyframes showMessage {
+    to{
+        top: .8rem;
+        opacity: 1
+    }
+}
+
+@keyframes hiddeMessage {
+    to{
+        top: -100px;
+        opacity: 0
+    }
+}

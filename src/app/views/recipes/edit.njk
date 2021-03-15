@@ -4,11 +4,13 @@
 
 {% block head %}
     <link rel="stylesheet" href="/styles/recipes.css">
+    <link rel="stylesheet" href="/styles/container.css">
     <script src="/scripts/scriptsAddItens.js" defer></script>
+    <script src="/scripts/ScriptsImages.js" defer></script>
 {% endblock head %}
 
-    <section class="form">
-        <form id="form-update" action="/admin/recipes?_method=PUT" method="POST">
+    <section class="form-group">
+        <form id="form-update" action="/admin/recipes?_method=PUT" method="POST" enctype="multipart/form-data">
             
             <header class="form-header">
                 <h1>Editando Receita</h1>
@@ -18,8 +20,9 @@
                 </div>
             </header>
 
-
-            {% include 'recipes/fields.njk' %}
+            <div class="fields">
+                {% include 'recipes/fields.njk' %}
+            </div>
 
             <input type="hidden" name="id" value="{{recipe.id}}">
 

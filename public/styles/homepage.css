@@ -1,5 +1,3 @@
-/* === HEADER === */
-
 .recipes-section h2 {
     margin-bottom: 2rem;
 }
@@ -7,7 +5,7 @@
 header .nav-container {
     padding: 2.5rem 0;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr 5fr;
     gap: 3rem;
 }
 
@@ -25,11 +23,9 @@ header .nav-container {
     color: #111111;
 }
 
-/* === SECTION === */
-
 section.homepage {
     /*max-width: 60vw;*/
-    background: #FBDFDB;
+    background: var(--homepage-section);
     border-radius: 2rem;
 }
 
@@ -45,14 +41,14 @@ section.homepage .info-container {
 .info-text h2 {
     font-weight: bold;
     font-size: 2rem;
-    color: #111111;
+    color: var(--black-color);
     padding-bottom: 10px;
 }
 
 .info-text p {
     opacity: 0.7;
     font-size: 1.1rem;
-    color: #000000;
+    color: var(--black-color);
     line-height: 1.75rem;
 }
 
@@ -66,12 +62,10 @@ section.homepage .info-container {
     position: absolute;
 }
 
-/* === ARTICLE === */
-
 article h2 {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #111111;
+    color: var(--black-color);
     margin-top: 3rem;
     margin-bottom: 1.2rem;
 }
@@ -84,12 +78,10 @@ article .cards-container {
 
 /* ============= ABOUT  =============*/
 
-/* === ARTICLE === */
-
 article .about-foodfy h2 {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #111111;
+    color: var(--black-color);
 
     margin-top: 1.8rem;
     margin-bottom: 1.2rem;
@@ -97,33 +89,31 @@ article .about-foodfy h2 {
 
 article .about-foodfy p {
     font-size: 1.1rem;
-    color: #444444;
+    color: var(--paragraph-color);
     line-height: 1.65rem;
     margin-block-end: 2.1rem;
 }
 
 /* ============= CREATE  =============*/
 
-/* === FORM === */
-
-form .form-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
 button.button,
 a.button {
-    background: #6558C3;
+    background: var(--button-color);
     border-radius: 4px;
 
     font-weight: bold;
     font-size: 1rem;
-    color: #FFFFFF;
+    color:var(--white-color);
     padding: .6rem 1rem;
     cursor: pointer;
     text-decoration: none;
+}
+
+/* form .form-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 form .item {
@@ -133,14 +123,14 @@ form .item {
 form .item h2 {
     font-weight: bold;
     font-size: 1rem;
-    color: #111111;
+    color: var(--black-color);
     margin-bottom: .6rem;
     
 }
 
 form .item input,
 form .item textarea {
-    background: #FFFFFF;
+    background: var(--white-color);
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     border-radius: 4px;
@@ -179,4 +169,74 @@ form .item .fa.fa-close {
     color: red;
     margin-left: 1rem;
     cursor: pointer;
+} */
+
+/* ============= LAYOUT =============*/
+
+header .search input {
+    border: 1px solid var(--search-border);
+    border-radius: 4px;
+    outline: none;
+
+    padding: .4rem;
+    height: 100%;
+    width: 40%;
+
+    font-size: 1rem;
+}
+
+header .search button {
+    margin-left: .5rem;
+}
+
+/* ============= RECIPES =============*/
+
+.search-for {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--black-color);
+}
+
+.container-pagination {
+    display: grid;
+    grid-template: 1fr 10rem / 1fr;
+}
+
+.container-pagination .cards-container {
+    min-height: 30rem;
+    margin-top: 1.2rem;
+}
+
+.pagination {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem 0;
+}
+
+.pagination a,
+.pagination span{
+    margin-right: 2rem;
+    color: var(--pagination-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: .8rem;
+}
+
+.pagination a:hover {
+    background-color: var(--pagination-color-dark);
+}
+
+/* ============= CHEFS =============*/
+
+.card-text-container h4 {
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: var(--black-color);
+}
+
+.card-text-container p {
+    margin-top: .3rem;
+    font-weight: normal;
+    font-size: .9rem;
+    color: var(--paragraph-color)
 }

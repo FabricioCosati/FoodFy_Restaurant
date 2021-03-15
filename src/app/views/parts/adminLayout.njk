@@ -5,18 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodFy</title>
     <link rel="stylesheet" href="/styles/style.css">
+    <script src="/scripts/scriptsSelectedPage.js" defer></script>
     {% block head %}
     {% endblock head %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>    
 
-   {% block modal %}
-   {% endblock modal %}
+    {% include 'parts/messages.njk' %}
+
+    {% block modal %}
+    {% endblock modal %}
 
     <header>
         <div class="nav-container admin">
             <a href="/"><img src="/assets/logo_white.png" alt="Logo FoodFy"></a>
+            <div class="nav-text-container">
+
+                <li class="recipes-list nav-list">
+                    <a href="/admin/recipes">Receitas</a>
+                </li>
+
+                <li class="chefs-list nav-list">
+                    <a href="/admin/chefs">Chefs</a>
+                </li>
+
+                <li class="accounts-list nav-list">
+                    <a href="/admin/profile">Minha Conta</a>
+                    {% if session.userId %}
+                        <ul class="submenu">
+                            <li>
+                                <a href="/admin/profile">Minha Conta</a>
+                            </li>
+                            {% if session.isAdmin %}
+                            <li>
+                                <a href="/admin/user/list">Usuários</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                </li>
+
+                {% if session.userId %}
+                    <li class="logout-list">
+                        <form action="/admin/logout" method="POST">
+                            <button type="submit">Sair</button>
+                        </form>
+                    </li>
+                {% endif %}
+                
+            </div>
         </div>
     </header>
 

@@ -4,22 +4,48 @@
 
 {% block head %}
     <link rel="stylesheet" href="/styles/recipes.css">
+    <link rel="stylesheet" href="/styles/container.css">
+    <script src="/scripts/ScriptsImages.js" defer></script>
 {% endblock head %}
 
-<section class="recipes-section">
+<section class="show-section">
 
     <header class="section-header">
         <h2>Receita: {{recipe.title}}</h2>
         <a class="button" href="/admin/recipes/{{recipe.id}}/edit">Editar Receita</a>
     </header>
 
-    <div class="image-container">
-        <img src="/assets/{{recipe.recipe_url}}.png" alt="Imagem de {{recipe.title}}">
+    <div class="preview-container">
+            <div class="image-highlight">
+                {% if not files[0] %}
+                <img src="http://placehold.it/500x500?text=RECEITA SEM FOTO" alt="{{recipe.title}}">
+                {% else %}
+                <img id="imageHighlight" src="{{files[0].src}}" alt="Imagem de {{recipe.title}}" onclick="Lightbox.open()">
+                {% endif %}
+
+                <div class="lightbox-container">
+                    <img id="imageHighlight" src="{{files[0].src}}" alt="Imagem de {{recipe.title}}">
+                    <a href="#" class="lightbox-close" onclick="Lightbox.close()">
+                        <i class="fa fa-close"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="image-gallery">
+                {% for file in files %}
+                    <img 
+                    src="{{file.src}}" 
+                    alt="Imagem de {{recipe.title}}"
+                    {% if loop.index0 == '0' %}
+                        class="active"
+                    {% endif %}
+                    onclick="ImageHighlight.setImage(event)">
+                {% endfor %}
+            </div>
     </div>
 
-    <div class="recipe-details">
+    <div class="details">
         <h3>{{recipe.title}}</h3>
-        <p>por {{recipe.chef}}</p>
+        <p>por {{recipe.chef_name}}</p>
     </div>
 
     <h3>Ingredientes</h3>
@@ -38,8 +64,10 @@
     
     <h3>Informações Adicionais</h3>
     <article class="ingredientsAndSteps">
-        <p>{{recipe.details}}</p>
+        <p>{{recipe.information}}</p>
     </article>
+
+    <p class="footer-updated">Atualizado em {{recipe.updated.day}} às {{recipe.updated.hour}}h</p>
 
 </section>
 

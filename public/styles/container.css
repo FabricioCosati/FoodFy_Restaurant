@@ -1,0 +1,167 @@
+/* ============= INDEX  =============*/
+
+.card-text-container h4 {
+    padding: 0;
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: var(--black-color);
+}
+
+.card-text-container p {
+    margin-top: .3rem;
+    font-weight: normal;
+    font-size: .9rem;
+    color: var(--paragraph-color);
+}
+
+.card-text-container a {
+    font-weight: bold;
+    font-size: .9rem;
+    color: var(--button-color);
+    text-decoration: none;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* ============= CREATE  =============*/
+
+form .form-header{
+    margin-bottom: 2rem;
+}
+
+form .footer-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button.button,
+a.button {
+    background: var(--button-color);
+    border-radius: 4px;
+
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--white-color);
+    padding: .5rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: background .2s;
+}
+
+button.button:hover,
+a.button:hover {
+    background: var(--button-color-dark)
+}
+
+button.button.button-delete {
+    background: var(--delete-color);
+    padding: .5rem 1.3rem;
+}
+
+button.button.button-delete:hover {
+    background: var(--delete-color-dark)
+}
+
+.button.button-cancel {
+    transition: background .2s;
+    background: var(--cancel-color);
+}
+
+.button.button-cancel:hover {
+    background: var(--cancel-color-dark);
+}
+
+form .item {
+    margin-bottom: 2rem;
+}
+
+form .item h2,
+form .chef-image h2 {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--black-color);
+    margin-bottom: .6rem;
+    
+}
+
+form .item .input-div input,
+form .item .input-div textarea,
+form .item .input-div select {
+    background: var(--white-color);
+    border: 1px solid var(--search-border);
+    border-radius: 4px;
+    width: 100%;
+    padding: 0.9rem;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: 2px 2px 2px -2px rgba(0, 0, 0, 0.5);
+}
+
+optgroup {
+    font-size: 1.2rem;
+}
+
+form .item button {
+    display: block;
+    margin-top: 1rem;
+
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--button-color);
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ============= SHOW  =============*/
+
+.show-section h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--black-color);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.section-header h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--black-color);
+    margin: 0;
+}
+
+.details {
+    text-align: center;
+    margin: 3.2rem 0 2rem
+}
+
+.details h3 {
+    font-weight: bold;
+    font-size: 2.1rem;
+    color: var(--black-color);
+}
+
+.details p {
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: var(--paragraph-color);
+}
+
+/* ============= FIELDS ERROR =============*/
+
+div .error {
+    width: 100%;
+    color: white;
+    background-color: #DC4747;
+    padding: .125rem 1rem;
+    border-radius: 0 0 4px 4px;
+    font-weight: bold;
+}

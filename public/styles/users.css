@@ -1,0 +1,67 @@
+section.form-group.user .form-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+section.form-group.user .users-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10rem;
+    row-gap: 2rem;
+}
+
+section.form-group.user .users-container h3 {
+    margin-bottom: .25rem;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 1.125rem;
+    color: var(--black-color);
+}
+
+section.form-group.user .users-container p {
+    margin-bottom: 1rem;
+    font-family: Helvetica;
+    font-size: .9rem;
+    color: var(--light-grey-color);
+}
+
+section.form-group.user .users-container .user-card-buttons-container a,
+section.form-group.user .users-container .user-card-buttons-container button {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: .9rem;
+    background: none;
+    cursor: pointer;
+}
+
+section.form-group.user .users-container .user-card-buttons-container a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: var(--button-color);
+}
+
+section.form-group.user .users-container .user-card-buttons-container button {
+    color: var(--delete-color);
+}
+
+/* ============= USER - index =============*/
+
+section.form-group.user form .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.form-group.user form .fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: .5rem;
+    column-gap: 2.5rem;
+}
+
+section.form-group.user form .fields .item.admin {
+    display: flex;
+    gap: .5rem;
+}

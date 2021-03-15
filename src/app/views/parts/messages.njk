@@ -1,0 +1,14 @@
+{% block head %}
+    <link rel="stylesheet" href="/styles/messages.css">
+    <script src="/scripts/scriptsMessages.js" defer></script>
+{% endblock head %}
+
+{% if error %}
+    <div class="messages error">
+        {{error}}
+    </div>
+{% elif success %}
+    <div class="messages success">
+        {{success}}
+    </div>
+{% endif %}

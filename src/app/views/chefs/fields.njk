@@ -1,0 +1,35 @@
+<div class="item">
+    <div>
+        <h2>Nome</h2>
+    </div>
+    <div class="input-div">
+        <input type="text" name="name" value="{{chef.name}}">
+    </div>
+</div>
+
+<div class="chef-image">
+    <div>
+        <h2>Avatar</h2>
+    </div>
+    
+    <div class="image-container">
+        <div class="image-input">
+            <input type="file"
+            name="image" 
+            multiple
+            accept="image/*"
+            onchange="UploadChefImage.addImage(event)">
+            <p>Enviar Avatar</p>
+        </div>
+        <div class="image-gallery">
+            {% if file %}
+                <div class="chef-photo" id="{{file[0].id}}">
+                    <img src="{{file[0].src}}" alt="Foto de {{chef.name}}">
+                    <i onclick="UploadChefImage.removeOldPhoto(event)" class="material-icons">delete</i>
+                </div>
+                <input type="hidden" name="removed_files">
+                <input type="hidden" name="fileId" value="{{file[0].id}}">
+            {% endif %}
+        </div>
+    </div>
+</div>

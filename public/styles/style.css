@@ -1,6 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+:root{
+  --black-color: #111111;  
+  --white-color: #ffffff;
+
+  --footer-color: #EEEEEE;
+  --footer-text-color: #999999;
+
+  --homepage-section: #FBDFDB;
+  --paragraph-color: #444444;
+  --button-color: #6558C3;
+  --button-color-dark: #3f3399;
+
+  --search-border: #DDDDDD;
+  --pagination-color: #5e5e5e;
+  --pagination-color-dark: #f1f1f1;
+  --delete-color: #DC4747;
+  --delete-color-dark: #b43333;
+  --cancel-color: #8A8A8A;
+  --cancel-color-dark: #585858;
+
+  --light-grey-color: #777777;
+
+}
+
 * {
+    list-style-type: none;
     margin: 0;
     padding: 0;
     border: none;
@@ -11,6 +36,7 @@
 /* === BODY === */
 
 body {
+    overflow: overlay;
     position: relative;
     min-height: 100vh;
     font-weight: normal;
@@ -20,7 +46,6 @@ main {
     padding-bottom: 5.5rem;
     max-width: 60vw;
     margin: 0 auto;
-
 }
 
 /* === HEADER === */
@@ -38,31 +63,106 @@ header .nav-container {
 }
 
 header .nav-container.admin {
-    background: #111111;
+    background: var(--black-color);
     padding: 2.5rem 0;
     margin-bottom: 3.2rem;
 }
 
-.nav-container > a {
+ .nav-container > a {
     margin-left: 20vw;
     outline: none;
 }
 
-.nav-text-container a {
-    margin-left: 1.8rem;
+.nav-container .nav-text-container {
+    display: flex;
 }
 
-.nav-text-container a {
-    text-decoration: none;
+.nav-container .nav-text-container a,
+.nav-container .nav-text-container button {
+    cursor: pointer;
     font-size: 1rem;
-    color: #111111;
+    background: none;
+    text-decoration: none;
+    margin-left: 1.8rem;
+    margin-bottom: 0;
+    color: var(--black-color);
+}
+
+.nav-container.admin .nav-text-container a {
+    color: #999999;
+    transition: color .2s;
+}
+
+.nav-container.admin .nav-text-container a:hover {
+    color: white
+}
+
+.nav-container .nav-text-container button {
+    color: white;
+}
+
+.nav-container.admin .nav-text-container li:nth-child(4) {
+    margin: 0 auto;
+}
+
+.nav-text-container .accounts-list ul {
+    background: white;
+}
+
+.nav-container .nav-text-container .accounts-list {
+    position: relative;
+}
+
+.nav-container .nav-text-container .accounts-list a {
+    margin-right: 1.8rem;
+}
+
+.nav-container .nav-text-container .accounts-list:hover .submenu {
+    top: 1.5rem;
+    opacity: 1;
+    visibility: initial
+}
+
+.nav-container .nav-text-container .accounts-list .submenu {
+    position: absolute;
+    width: 100%;
+    box-shadow: 2px 2px 2px -2px rgb(0 0 0 / 30%);
+    border-radius: 4px;
+    
+    top: 3rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.nav-container .nav-text-container .accounts-list .submenu li a {
+    color: black;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem 0;
+    border-top: 1px solid #dddddd;
+    border-radius: 3px;
+
+    transition: all .2s
+}
+
+.nav-container .nav-text-container .accounts-list .submenu li:first-child a {
+    border: none;
+}
+
+.nav-container .nav-text-container .accounts-list .submenu a:hover {
+    background: #505050;
+    color: white;
 }
 
 /* === FOOTER === */
 
 footer {
     margin-top: 3.2rem;
-    background: #EEEEEE;
+    background: var(--footer-color);
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -71,7 +171,7 @@ footer {
 footer p{
     padding: 1.5rem;
     font-size: 0.9rem;
-    color: #999999;
+    color: var(--footer-text-color);
     text-align: center;
 }
 

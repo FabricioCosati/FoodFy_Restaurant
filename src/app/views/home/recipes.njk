@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/styles/homepage.css">
     <link rel="stylesheet" href="/styles/modalAndCards.css">
     <script src="/scripts/scriptsModal.js" defer></script>
+    <script src="/scripts/pagination.js" defer></script>
 {% endblock head %}
 
 {% block modal %}
@@ -22,22 +23,31 @@
 {% endblock modal %}
 
 {% block content %}
+
+{% if filter %}
+    <h2 class="search-for">Buscando por "{{filter}}"</h2>
+{% endif %}
+
+
+<div class="container-pagination">
     <article>
         <div class="cards-container">
             {% for recipe in recipes %}
                 <div class="card">
-                    <img id="{{recipe.recipe_url}}" src="assets/{{recipe.recipe_url}}.png" alt="{{recipe.title}}">
+                    <img id="{{recipe.file}}" src="{{recipe.file}}" alt="{{recipe.title}}">
                     <h4>{{recipe.title}}</h4>
-                    <p>por {{recipe.chef}}</p>
-                </div>
-            {% endfor %}
-            {% for recipe in recipes %}
-                <div class="card">
-                    <img id="{{recipe.recipe_url}}" src="assets/{{recipe.recipe_url}}.png" alt="{{recipe.title}}">
-                    <h4>{{recipe.title}}</h4>
-                    <p>por {{recipe.chef}}</p>
+                    <p>por {{recipe.chef_name}}</p>
                 </div>
             {% endfor %}
         </div>
     </article>
+    
+    <div 
+    class="pagination"
+    data-page="{{paginate.page}}"
+    data-total="{{paginate.total}}"
+    data-filter="{{filter}}"
+    > 
+    </div>
+</div>
 {% endblock content %}

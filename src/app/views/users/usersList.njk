@@ -1,0 +1,51 @@
+{% extends "parts/adminLayout.njk"%}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/container.css">
+    <link rel="stylesheet" href="/styles/users.css">
+{% endblock head %}
+
+{% block content %}
+
+    <section class="form-group user">
+        <form method="POST" action="/admin/user?_method=DELETE">
+
+            <header class="form-header">
+                <h2>Usuários</h2>
+                <a href="/admin/user/create" class="button">Novo</a>
+            </header>
+
+            <div class="users-container">
+                {% for user in users %}
+                <div class="user-card">
+                    <h3>{{user.name}}</h3>
+                    <p>{{user.email}}</p>
+
+                    <div class="user-card-buttons-container" id="{{user.id}}">
+                        <a href="/admin/user/{{user.id}}">Editar</a>
+                        {% if session.isAdmin and user.id != session.userId %}
+                        <button type="submit">Remover</button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        <input type="hidden" name="deleteId">
+        </form>
+
+    </section>
+
+    <script>
+        const buttons = document.querySelectorAll(".user-card-buttons-container button[type=submit]")
+        const deleteInput = document.querySelector("input[name=deleteId]")
+
+        for(let button of buttons){
+            button.addEventListener("click", (e) => {
+                const parentId = e.target.parentNode.id
+                deleteInput.value = parentId
+            })
+        }
+    </script>
+
+{% endblock content %}

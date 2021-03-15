@@ -1,0 +1,41 @@
+{% extends "parts/adminLayout.njk"%}
+
+{% block content %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/container.css">
+    <link rel="stylesheet" href="/styles/users.css">
+    <script src="/scripts/scriptsValidation.js" defer></script>
+{% endblock head %}
+
+<section class="form-group user">
+
+    <form id="form-update" action="/admin/user?_method=PUT" method="POST">
+
+        <header class="form-header">
+            {% if session.userId == user.id %}
+                <h2>Bem Vindo {{user.name}}</h2>
+            {% else %}
+                <h2>Editando {{user.name}}</h2>
+            {% endif %}
+
+            <div class="button-group">
+                <button class="button" type="submit" form="form-update">Salvar</button>
+                {% if session.isAdmin and user.id != session.userId %}
+                    <button class="button button-delete" type="submit" form="form-delete">Deletar</button>
+                {% endif %}
+            </div>
+        </header>
+
+        <div class="fields">
+            {% include "users/fields.njk" %}
+            <input type="hidden" name="id" value="{{user.id}}">
+        </div>
+    </form>
+    <form id="form-delete" action="/admin/user?_method=DELETE" method="POST">
+        <input type="hidden" name="id" value="{{user.id}}">
+    </form>
+
+</section>
+
+{% endblock content %}

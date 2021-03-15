@@ -1,0 +1,26 @@
+{% extends "parts/adminLayout.njk" %}
+
+{% block content %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/chefs.css">
+    <link rel="stylesheet" href="/styles/container.css">
+    <script src="/scripts/ScriptsImages.js" defer></script>
+{% endblock head %}
+
+    <section class="form-group chefs">
+
+        <form action="/admin/chefs" method="POST" enctype="multipart/form-data">
+
+            <header class="form-header">
+                <h2>Novo Chef</h2>
+                <button class="button" type="submit">Salvar Chef</button>
+            </header>
+
+            {% include "chefs/fields.njk" %}
+
+        </form>
+      
+    </section>
+
+{% endblock content %}

@@ -4,11 +4,13 @@
 
 {% block head %}
     <link rel="stylesheet" href="/styles/recipes.css">
+    <link rel="stylesheet" href="/styles/container.css">
     <script src="/scripts/scriptsAddItens.js" defer></script>
+    <script src="/scripts/ScriptsImages.js" defer></script>
 {% endblock head %}
 
-    <section class="form">
-        <form action="/admin/recipes" method="POST">
+    <section class="form-group recipes">
+        <form action="/admin/recipes" method="POST" enctype="multipart/form-data">
             
             <header class="form-header">
                 <h2>Criando Receita</h2>
